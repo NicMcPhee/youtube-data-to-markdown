@@ -1,0 +1,451 @@
+{
+    "kind": "youtube#playlistItemListResponse",
+    "etag": "xVbeZ3OpJ7_Nc4weHfwwof4VWW8",
+    "prevPageToken": "EAEaBlBUOkNESQ",
+    "items": [
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "ehhe3PjC0irJ3HZlmmCoY4ggKlE",
+            "id": "VVU1dEdJUXRpMlVZZkNTSTlhVWVTWkZRLmVKZXA5OHB4R0tJ",
+            "snippet": {
+                "publishedAt": "2022-07-30T17:46:40Z",
+                "channelId": "UC5tGIQti2UYfCSI9aUeSZFQ",
+                "title": "Episode 13: Progress on ice-repos! Improved understanding of Yew/React!",
+                "description": "After a week off, a good day back in the code. We didn't write/change a _lot_, but the changes we did make were consequential, and I think I understand Yew/React hooks a lot better now than when I got up this morning.\n\nGot a *lot* of good questions from @DefineEvil on Twitch, who knows a lot more about React than I do. That really helped me get my head around some of the hooks stuff, and we did something nifty with keys that may have improved performance. I'm still not entirely sure how/where Yew supports keys, but it did do something useful and seemed to make things go faster, so that's cool.\n\nFrom a user perspective, the two big additions are:\n\n* The site now properly (re)loads when you change the organization.\n* We display a \"Loading…\" message when we're waiting for the HTTP request to GitHub to return.\n\nNow we \"just\" need to add checkboxes and authentication so we can actually select and archive repositories, and deal with paging of results from GitHub, and do something sensible about error handling, and we could call this 1.0! :)\n\nFor the moment, at least, I'm streaming every Tuesday and Saturday from 10am-noon CDT (https://twitch.tv/NicMcPhee). We're currently working on a simple web app in Rust to solve a problem that's annoying me. :) See this repo for a description of the problem: https://github.com/NicMcPhee/ice-repos\n\nThanks for watching!",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/eJep98pxGKI/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/eJep98pxGKI/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/eJep98pxGKI/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/eJep98pxGKI/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/eJep98pxGKI/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "Unhindered by Coding!",
+                "playlistId": "UU5tGIQti2UYfCSI9aUeSZFQ",
+                "position": 50,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "eJep98pxGKI"
+                },
+                "videoOwnerChannelTitle": "Unhindered by Coding!",
+                "videoOwnerChannelId": "UC5tGIQti2UYfCSI9aUeSZFQ"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "9CaSRa9EGanLIYEepxv2d7UP21k",
+            "id": "VVU1dEdJUXRpMlVZZkNTSTlhVWVTWkZRLkEyOGlleHQ1NUFv",
+            "snippet": {
+                "publishedAt": "2022-07-19T17:45:24Z",
+                "channelId": "UC5tGIQti2UYfCSI9aUeSZFQ",
+                "title": "Episode 12: Progress on ice-repos! DISPLAYING REPOS!",
+                "description": "A very exciting day! We managed to display the fix the parsing problems so we can successfully grab all the (public) repositories from an organization and display them! We added some other properties to our repository struct, so we can now filter out previously archived repos and display when repositories were last updated and pushed to.\n\nWe've made a lot of progress, and it's starting to look something like an actual app. Now we \"just\" need to add checkboxes and authentication so we can actually select and archive repositories, and we could call this 1.0! :)\n\nFor the moment, at least, I'm streaming every Tuesday and Saturday from 10am-noon CDT (https://twitch.tv/NicMcPhee). We're currently working on a simple web app in Rust to solve a problem that's annoying me. :) See this repo for a description of the problem: https://github.com/NicMcPhee/ice-repos\n\nThanks for watching!",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/A28iext55Ao/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/A28iext55Ao/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/A28iext55Ao/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/A28iext55Ao/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/A28iext55Ao/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "Unhindered by Coding!",
+                "playlistId": "UU5tGIQti2UYfCSI9aUeSZFQ",
+                "position": 51,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "A28iext55Ao"
+                },
+                "videoOwnerChannelTitle": "Unhindered by Coding!",
+                "videoOwnerChannelId": "UC5tGIQti2UYfCSI9aUeSZFQ"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "is0AVsXYQiOM5DMMLYhIyuG1y6g",
+            "id": "VVU1dEdJUXRpMlVZZkNTSTlhVWVTWkZRLmpKakpFb3h5QmZR",
+            "snippet": {
+                "publishedAt": "2022-07-19T17:44:07Z",
+                "channelId": "UC5tGIQti2UYfCSI9aUeSZFQ",
+                "title": "Episode 11: Progress on ice-repos! Getting HTTP calls to work",
+                "description": "Here we worked through the basics of making HTTP calls and parsing the results with `serde`. Got through several examples, but then failed at the last minute when we tried to actually make a request to GitHub. (This is resolved in the next episode.)\n\nFor the moment, at least, I'm streaming every Tuesday and Saturday from 10am-noon CDT (https://twitch.tv/NicMcPhee). We're currently working on a simple web app in Rust to solve a problem that's annoying me. :) See this repo for a description of the problem: https://github.com/NicMcPhee/ice-repos\n\nThanks for watching!",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/jJjJEoxyBfQ/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/jJjJEoxyBfQ/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/jJjJEoxyBfQ/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/jJjJEoxyBfQ/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/jJjJEoxyBfQ/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "Unhindered by Coding!",
+                "playlistId": "UU5tGIQti2UYfCSI9aUeSZFQ",
+                "position": 52,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "jJjJEoxyBfQ"
+                },
+                "videoOwnerChannelTitle": "Unhindered by Coding!",
+                "videoOwnerChannelId": "UC5tGIQti2UYfCSI9aUeSZFQ"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "Bs_ZMKi3TqksvC3YsrO2dvMM3zM",
+            "id": "VVU1dEdJUXRpMlVZZkNTSTlhVWVTWkZRLlE0dEJjcVJqSTBZ",
+            "snippet": {
+                "publishedAt": "2022-07-19T17:31:59Z",
+                "channelId": "UC5tGIQti2UYfCSI9aUeSZFQ",
+                "title": "Episode 10: Progress on ice-repos! Trouble with crabs!",
+                "description": "Buckets of flailing. Tried to use the Octocrab library to help manage the GitHub API interactions, but nothing compiled. Turns out that Octocrab doesn't support WASM, nor do any other Rust GitHub API libraries that I looked at. :(\n\nThere are also _major_ sound issues for a while in the second hour. Doing full builds clearly ate too much of my computer's resources and the stream audio disappeared as a result. Sorry about that.\n\nFor the moment, at least, I'm streaming every Tuesday and Saturday from 10am-noon CDT (https://twitch.tv/NicMcPhee). We're currently working on a simple web app in Rust to solve a problem that's annoying me. :) See this repo for a description of the problem: https://github.com/NicMcPhee/ice-repos\n\nThanks for watching!",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/Q4tBcqRjI0Y/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/Q4tBcqRjI0Y/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/Q4tBcqRjI0Y/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/Q4tBcqRjI0Y/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/Q4tBcqRjI0Y/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "Unhindered by Coding!",
+                "playlistId": "UU5tGIQti2UYfCSI9aUeSZFQ",
+                "position": 53,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "Q4tBcqRjI0Y"
+                },
+                "videoOwnerChannelTitle": "Unhindered by Coding!",
+                "videoOwnerChannelId": "UC5tGIQti2UYfCSI9aUeSZFQ"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "CHv3ZS52FK-uXt3g2MjdyP7Qms4",
+            "id": "VVU1dEdJUXRpMlVZZkNTSTlhVWVTWkZRLlJzNGozbnRJcTlR",
+            "snippet": {
+                "publishedAt": "2022-06-21T17:51:10Z",
+                "channelId": "UC5tGIQti2UYfCSI9aUeSZFQ",
+                "title": "Episode 7: Finishing the Rustlings exercises!: Conversions and advanced errors",
+                "description": "We finished the Rustlings exercises (https://github.com/rust-lang/rustlings) today!\n\nLast week, in Episode 6, I got really bogged down today in the `TryFrom` conversion exercises. I had a chance to look at that some \"offline\", and realized that I had basically been programming with my hands instead of my head. After some sleep and reading, I remembered how to program again and it turned out to be reasonably straightforward.\n\nThat said, the \"reasonably straightforward\" approach led to a _lot_ of code duplication, so after getting the tests to pass (going from red to green), I spent a while refactoring that solution, ending up with a substantially shorter version. (I may actually make a scripted, stand-alone video of that refactoring for my \"primary\" YouTube channel.)\n\nAfter that I was able to finish up the remaining 3 Rustlings exercises (one more conversion exercise and two on advanced error handling)!\n\nWe had about 15 minutes left at the end, so I went over my plan for the project that I'd like to implement in the upcoming episodes of the stream: ice-repos (https://github.com/NicMcPhee/ice-repos), a tool for archiving collections of repositories on GitHub. My goal is to use Rust + Yew to build a simple WASM webapp to help me manage an otherwise tedious process.\n\nApologies for the fan background noise. It's stupid hot here at the moment, and we have a bunch of fans trying to keep the room I record in from melting entirely.\n\nBelow are a the time codes:\n\n0:00 – Introduction and state of play with the Rustlings work, with a lot of discussion of my problems with the `TryFrom` conversion exercise\n4:20 – Returning to Conversions: `TryFrom`\n9:20 – Actually starting the solution to the `TryFrom` exercise\n30:10 – Refactoring the `TryFrom` exercise solution\n56:30 – Conversions: `AsRef` (lots of good audience suggestions here)\n1:12:45 – Advanced Errors 1\n1:25:45 – Advanced Errors 2\n1:47:45 – We've finished the Rustlings exercises! (& I babble on some about my experience with that)\n1:49:50 – Quick overview of my idea for the next project for the stream: ice-repos (https://github.com/NicMcPhee/ice-repos), a tool for archiving collections of repositories on GitHub.\n\nFor the moment, at least, I'm streaming every Tuesday and Saturday from 10am-noon CDT (https://twitch.tv/NicMcPhee). We're currently just working through the Rustlings exercises, and I'm hoping we'll finish in the next session. After that I'll probably actually try to build a simple app in Rust to solve a problem that's annoying me. :) See this repo for a description of the problem: https://github.com/NicMcPhee/ice-repos\n\nThanks for watching!",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/Rs4j3ntIq9Q/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/Rs4j3ntIq9Q/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/Rs4j3ntIq9Q/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Unhindered by Coding!",
+                "playlistId": "UU5tGIQti2UYfCSI9aUeSZFQ",
+                "position": 54,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "Rs4j3ntIq9Q"
+                },
+                "videoOwnerChannelTitle": "Unhindered by Coding!",
+                "videoOwnerChannelId": "UC5tGIQti2UYfCSI9aUeSZFQ"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "dPNhZs4GV8EuUL7ZrDRLGMAO8GA",
+            "id": "VVU1dEdJUXRpMlVZZkNTSTlhVWVTWkZRLmM2M3AzVERSd3RR",
+            "snippet": {
+                "publishedAt": "2022-06-14T18:07:47Z",
+                "channelId": "UC5tGIQti2UYfCSI9aUeSZFQ",
+                "title": "Episode 6: Going through the Rustlings exercises, part 6: Conversions",
+                "description": "We're *almost* done with the Rustlings exercises (https://github.com/rust-lang/rustlings), but I got really bogged down today in one of the conversion exercises. We only completed the first two conversion exercises both of which took a fair while), and then I got completely lost in the third one. We only have 4 exercises left, but it's hard to know how long this will take at this rate. I'll try to do some homework on conversions before Saturday to speed things along.\n\nAs well as getting stuck on the fourth conversion exercise, we spent a *lot* of (good, IMHO) time refactoring the second exercise, as well as some time flailing because I had a logical condition flipped and didn't notice it right away. :(\n\nBelow are a few time codes, but they're a little less helpful given how long we spent on that one exercise.\n\n0:00 – Introduction and state of play with the Rustlings work\n4:50 – Conversions: Using `as`\n9:10 – Conversions: `From` and `Into`\n1:02:50 – Conversions: `FromStr`\n1:25:30 – Conversions: `TryFrom`\n2:12:30 – Wrap up\n\nFor the moment, at least, I'm streaming every Tuesday and Saturday from 10am-noon CDT (https://twitch.tv/NicMcPhee). We're currently just working through the Rustlings exercises, and I'm hoping we'll finish in the next session. After that I'll probably actually try to build a simple app in Rust to solve a problem that's annoying me. :) See this repo for a description of the problem: https://github.com/NicMcPhee/ice-repos\n\nThanks for watching!",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/c63p3TDRwtQ/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/c63p3TDRwtQ/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/c63p3TDRwtQ/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Unhindered by Coding!",
+                "playlistId": "UU5tGIQti2UYfCSI9aUeSZFQ",
+                "position": 55,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "c63p3TDRwtQ"
+                },
+                "videoOwnerChannelTitle": "Unhindered by Coding!",
+                "videoOwnerChannelId": "UC5tGIQti2UYfCSI9aUeSZFQ"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "OHwQ5nudfADrFSqZqeTUO22Cu1c",
+            "id": "VVU1dEdJUXRpMlVZZkNTSTlhVWVTWkZRLmZybjFOclRRa1Fz",
+            "snippet": {
+                "publishedAt": "2022-06-12T02:38:21Z",
+                "channelId": "UC5tGIQti2UYfCSI9aUeSZFQ",
+                "title": "Episode 5: Going through the Rustlings exercises, part 5: Iterators, threads, macros, clippy, Quiz 4",
+                "description": "Here we go through some more of the Rustlings exercises (https://github.com/rust-lang/rustlings). Today we covered another 10% of the exercises, getting pretty close to the end. We finished up the exercises on iterators (some nice stream processing/higher-order function work there), threads (pretty simple use of threads, but still interesting), macros (*lots* of questions and struggle there), Quiz 4, and the two clippy exercises.\n\nThe big stumbling block today was exporting a macro out of a module in `macros3.rs`. This StackOverflow post (https://stackoverflow.com/a/31749071) suggested the kind of solution that I was looking for, but it didn't work for me. It *did* work for one of the other participants, though, so I'm not sure what's happening there.\n\nI said some fairly nonsensical things at the beginning of the threads exercise before I realized that we did actually Mutex there. :) I think I decided the compiler was an all-knowing genius, which isn't exactly supportable. Once I got that sorted (and remember/looked up various bits of necessary syntax), we got there.\n\nAll that's left are the 5 exercises on conversions (which should be interesting, as I'm often unclear about what conversations are happening when and why) and two on advanced errors.\n\nBelow is a pretty detailed set of time codes.\n\n0:00 – Introduction and state of play with the Rustlings work (I got a little chatty this time)\n5:10 – Iterators (last 2 exercises)\n31:25 – Threads (1 exercises)\n1:07:00 – Macros (4 exercises)\n1:39:30 – Quiz 4 (basically just on macros)\n1:45:00 – Clippy  (2 exercises)\n1:52:00 – Wrap up\n\nFor the moment, at least, I'm streaming every Tuesday and Saturday from 10am-noon CDT (https://twitch.tv/NicMcPhee). We're currently just working through the Rustlings exercises, and I suspect we'll finish in the next session. After that I'll probably actually try to build a simple app in Rust to solve a problem that's annoying me. :)\n\nThanks for watching!",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/frn1NrTQkQs/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/frn1NrTQkQs/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/frn1NrTQkQs/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/frn1NrTQkQs/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/frn1NrTQkQs/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "Unhindered by Coding!",
+                "playlistId": "UU5tGIQti2UYfCSI9aUeSZFQ",
+                "position": 56,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "frn1NrTQkQs"
+                },
+                "videoOwnerChannelTitle": "Unhindered by Coding!",
+                "videoOwnerChannelId": "UC5tGIQti2UYfCSI9aUeSZFQ"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "wos_NXlUGJZ90eNWDzIeafWrPfE",
+            "id": "VVU1dEdJUXRpMlVZZkNTSTlhVWVTWkZRLk1iWTBOdUZvRHc0",
+            "snippet": {
+                "publishedAt": "2022-05-31T18:01:43Z",
+                "channelId": "UC5tGIQti2UYfCSI9aUeSZFQ",
+                "title": "Episode 3: Going through the Rustlings exercises, part 3: Strings and Errors!",
+                "description": "Here we go through some more of the Rustlings exercises (https://github.com/rust-lang/rustlings). Today we did the exercises on Strings (talking a lot about &str and String), did Quiz 2 (passed a quiz!), and went through the 6 exercises on Errors. I'd read/heard about error handling (the Option and Result types), but hadn't *used* them much, so I did a lot of learning in this section. Got to play with ?, matching, if-let, and mapping both values and errors across Results.\n\nBelow is a pretty detailed set of time codes.\n\n0:00 – Introduction and state of play with the Rustlings work\n1:30 – Plug for my upcoming Minnebar talk\n4:15 – Strings (2 exercises)\n15:15 – Quiz 2\n38:50 – Error handling (6 exercises). \n\nThe \"Error handling\" sections goes all the way to the end of the stream, but I'll time code a few moments in that where there were potentially interesting discussions of particular features or concepts.\n\n46:00 – Some ruminations on \"mis-using\" values like -1 and null as error codes in many languages, and the advantages of Rust's use of Option and Result.\n48:40 – `errors2.rs` went on for quite a while because I ended up solving it three quite different ways, based in part on suggestions from viewers. We used an explicit map, the ? operator, and Result::map, all three versions were quite interesting, and I learned a *bunch* here. Thanks to my viewers for the great suggestions and feedback!\n1:08:20 – `errors3.rs`, where I got to learn how to use an if-let \n1:16:20 – `errors4.rs`, where I learned a lot of new stuff about `match`, and found that half-open ranges aren't fully supported yet :(. Got a great suggestion to explore `std::cmp::Ordering`, which led to a very nice solution (although I still think that `&0` is some weird syntax).\n1:35:20 – Some ruminations on learning languages, the \"difficulty\" of learning languages, and the difference between learning a language and learning it *well*.\n1:40:00 – `errors5.rs` let to a fair bit of flailing before I figured out that I could use `Box&lt;dyn Error&gt;` to return a \"generic\" error.\n1:57:10 – `errors6.rs` was a nice example of using conversions and a new `enum` to an error that could have either of two types. Also a nice use of `Result::map_err` that was new to me.\n\n2:07:50 – Wrap up and another reminder about Minnebar and no stream next Satureday.\n\nI won't be able to do next Saturday's stream (4 June 2022) because I'll be attending Minnebar and giving a talk there (https://sessions.minnestar.org/sessions/1307). I should return to the stream (https://twitch.tv/NicMcPhee) next Tuesday (7 June 2022) from 10-noon CDT, however, where we'll work through more of the Rustlings exercises.\n\nThanks for watching!",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/MbY0NuFoDw4/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/MbY0NuFoDw4/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/MbY0NuFoDw4/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Unhindered by Coding!",
+                "playlistId": "UU5tGIQti2UYfCSI9aUeSZFQ",
+                "position": 57,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "MbY0NuFoDw4"
+                },
+                "videoOwnerChannelTitle": "Unhindered by Coding!",
+                "videoOwnerChannelId": "UC5tGIQti2UYfCSI9aUeSZFQ"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "57mV7SucD4Cjk9tSWYcNlsFC01k",
+            "id": "VVU1dEdJUXRpMlVZZkNTSTlhVWVTWkZRLnVpQUJyZHRaMWdR",
+            "snippet": {
+                "publishedAt": "2022-05-28T19:52:54Z",
+                "channelId": "UC5tGIQti2UYfCSI9aUeSZFQ",
+                "title": "Episode 2: Going through the Rustlings exercises, part 2",
+                "description": "Here we go through roughly the second quarter of the Rustlings exercises (https://github.com/rust-lang/rustlings), going through the exercises on structs, enums, modules, and collections (vectors and hashmaps). Today was definitely slower than Episode 1, partly because I had to look more up (learning! gasp!) and partly because there was a lot of cool interaction with folks on the stream.\n\nI think I improved the video resolution this time, so hopefully the text will be easier to read. I would still probably listen/watch at a higher speed. 1.5x is totally do-able, and even 2x is fine if you're mostly listening and not paying much/any attention to what I'm typing.\n\nBelow is a pretty detailed set of time codes. I might recommend jumping to move semantics (50:40) or Quiz 1 right before that (46:20). I'd arguably found my stride somewhat and the discussions there are arguably more interesting than the \"getting started\" stuff at the beginning.\n\n0:00 - Introduction, including some info on why I'm doing both streaming and coming to better understand Rust\n1:24 – Plug for my upcoming Minnebar talk; getting VS Code & Rustlings up\n9:00 – Structs (2 exercises)\n32:15 - Enums (3 exercises)\n57:50 - Modules (3 exercises)\n1:23:20 - Collections [Vectors] (2 exercises)\n1:36:30 - Collections [HashMaps] (2 exercises). This got long because of some digging around in different ways of handling cases with an conditionally updating a HashMap entry, but I learned a lot doing that, so it was good for me.\n2:03:10 - Wrap up\n\nWe'll continue the stream (https://twitch.tv/NicMcPhee) next Tuesday (31 May 2022) from 10-noon CDT. By default I'll continue working through the Rustlings exercises for now, but I *might* switch for just that day to working on some code for my Minnebar talk (Saturday, 4 June 2022; https://sessions.minnestar.org/sessions/1307). We'll see.\n\nThanks for watching!",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/uiABrdtZ1gQ/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/uiABrdtZ1gQ/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/uiABrdtZ1gQ/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/uiABrdtZ1gQ/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/uiABrdtZ1gQ/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "Unhindered by Coding!",
+                "playlistId": "UU5tGIQti2UYfCSI9aUeSZFQ",
+                "position": 58,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "uiABrdtZ1gQ"
+                },
+                "videoOwnerChannelTitle": "Unhindered by Coding!",
+                "videoOwnerChannelId": "UC5tGIQti2UYfCSI9aUeSZFQ"
+            }
+        },
+        {
+            "kind": "youtube#playlistItem",
+            "etag": "RU6fijGVC7o8FLfyHCShrsWH_xY",
+            "id": "VVU1dEdJUXRpMlVZZkNTSTlhVWVTWkZRLjM2Qk4xY1ktbkRF",
+            "snippet": {
+                "publishedAt": "2022-05-24T21:20:28Z",
+                "channelId": "UC5tGIQti2UYfCSI9aUeSZFQ",
+                "title": "Episode 1: Going through the Rustlings exercises, part 1",
+                "description": "In this, my first ever live stream, I went through about the first third of the Rustlings exercises (https://github.com/rust-lang/rustlings), getting up to the beginning of the exercises on structures.\n\nThe quality here is definitely alpha, as advertised. The video resolution isn't quite as high as I'd live, and I'll work to improve that moving forward. I am also suffering from hay fever, so my voice is quite froggy in places, including (unfortunately) right at the beginning. Not an amazing opening, TBH.\n\nI would probably listen/watch at a higher speed. 1.5x is totally do-able, and even 2x is fine if you're mostly listening and not paying much/any attention to what I'm typing.\n\nAs mentioned above, this makes it through roughly the first third of the Rustlings exercises. Some of these I just zip through pretty fast, while there are others that I explore some and solve in multiple ways.\n\nBelow is a pretty detailed set of time codes. I might recommend jumping to move semantics (50:40) or Quiz 1 right before that (46:20). I'd arguably found my stride somewhat and the discussions there are arguably more interesting than the \"getting started\" stuff at the beginning.\n\n0:00 - Introduction, including some info on why I'm doing both streaming and coming to better understand Rust\n2:45 - Setting up Rustlings. There's a false start where I didn't actually follow the install instructions. The proper install process starts at 4:00 and takes a while (had to download and compile a lot of crates).\n9:50 - Starting up VS Code and running Rustlings for the first time\n12:10 - Starting `rustlings watch`and the first two Intro exercises\n16:30 - Variables (6 exercises)\n30:45 - Functions (5 exercises)\n40:05 - IFs (2 exercises)\n46:20 - Quiz 1\n50:40 - Move Semantics (6 exercises); this is long because I talk a _lot_ about ownership and borrowing. (There's also a phone ringing in the background. I wasn't sure if the mic would pick that up, but it clearly did.)\n1:31:20 - Primitive types (6 exercises)\n1:43:20 - Structs (just the first exercise)\n1:54:00 - Wrap up",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/36BN1cY-nDE/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/36BN1cY-nDE/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/36BN1cY-nDE/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    },
+                    "standard": {
+                        "url": "https://i.ytimg.com/vi/36BN1cY-nDE/sddefault.jpg",
+                        "width": 640,
+                        "height": 480
+                    },
+                    "maxres": {
+                        "url": "https://i.ytimg.com/vi/36BN1cY-nDE/maxresdefault.jpg",
+                        "width": 1280,
+                        "height": 720
+                    }
+                },
+                "channelTitle": "Unhindered by Coding!",
+                "playlistId": "UU5tGIQti2UYfCSI9aUeSZFQ",
+                "position": 59,
+                "resourceId": {
+                    "kind": "youtube#video",
+                    "videoId": "36BN1cY-nDE"
+                },
+                "videoOwnerChannelTitle": "Unhindered by Coding!",
+                "videoOwnerChannelId": "UC5tGIQti2UYfCSI9aUeSZFQ"
+            }
+        }
+    ],
+    "pageInfo": {
+        "totalResults": 60,
+        "resultsPerPage": 50
+    }
+}
