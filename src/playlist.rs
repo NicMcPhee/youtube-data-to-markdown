@@ -1,5 +1,6 @@
 use std::{fs::File, io::BufReader};
 
+use chrono::{DateTime, Local};
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
 
@@ -42,4 +43,36 @@ mod tests {
         assert_eq!(10, entries.len());
         assert_eq!("PLI9i5fpXEEc6_o2Xy0ozg_hrO4FgswkGG", entries[0].id);
     }
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+struct Thumbnail {
+    url: String,
+    width: usize,
+    height: usize,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+#[serde(rename_all = "snake_case")]
+struct Thumbnails {
+    default: Thumbnail,
+    medium: Thumbnail,
+    high: Thumbnail,
+    standard: Thumbnail,
+    maxres: Thumbnail,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+#[serde(rename_all = "snake_case")]
+struct Snippet {
+    published_at: DateTime<Local>,
+    title: String,
+    description: String,
+    thumbnails: Thumbnails
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+struct Playlist {
+    id: String,
+    snippet: Snippet,
 }
