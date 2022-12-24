@@ -5,3 +5,4 @@
 
 pub mod video;
 pub mod playlist;
+pub mod parsing;
