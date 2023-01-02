@@ -45,9 +45,29 @@ pub struct Video {
     snippet: Snippet,
 }
 
-fn restore_angle_brackets(value: &Value, _: &HashMap<String, Value>) -> Result<Value> {
-    Ok(tera::Value::String(value.to_string()))
-    // todo!()
+// We want to:
+//  - Remove leading and trailing quotes
+//  - Replace "\n" with return chars ('\n')
+//  - Replace escaped double quotes ("\"") with just double quotes
+//  - Replace matching parens in backticks with angle brackets
+//    - Actually, I'm not doing this. There are probably about as
+//      many parens that should stay parens as parens that should be
+//      angle brackets. I think I'll just need to modify these by hand.
+//      Sigh.
+// This always returns `Ok`, so Clippy thinks we don't really need a
+// `Result` type here. It's required by `tera`, though, so we'll just
+// let it go.
+#[allow(clippy::unnecessary_wraps)]
+fn clean_text(value: &Value, _: &HashMap<String, Value>) -> Result<Value> {
+    let text = value.to_string();
+    // Strip off leading and trailing double quotes.
+    let text = text.trim().trim_matches('"');
+
+    let text = text.replace("\\n", "\n");
+    let text = text.replace("\\\"", "\"");
+
+    let val = tera::Value::from(text);
+    Ok(val)
 }
 
 lazy_static! {
@@ -60,7 +80,7 @@ lazy_static! {
             }
         };
         // tera.autoescape_on(vec![".html", ".sql"]);
-        tera.register_filter("restore_angle_brackets", restore_angle_brackets);
+        tera.register_filter("restore_angle_brackets", clean_text);
         tera
     };
 }
@@ -160,7 +180,7 @@ impl Video {
         // `subject` better be a key in the `SUBJECT_MAP` or we have a problem
         #[allow(clippy::unwrap_used)]
         context.insert("subject", SUBJECT_MAP.get(subject).unwrap());
-        context.insert("code", &self.id);
+        context.insert("code", &("\"".to_owned() + &self.id + "\""));
         // `subject` better be a key in the `PLAYLIST_MAP` or we have a problem
         #[allow(clippy::unwrap_used)]
         context.insert("playlist_code", PLAYLIST_MAP.get(subject).unwrap());
@@ -195,7 +215,7 @@ mod context_tests {
         assert_eq!("2022-12-10", context.get("date").unwrap());
         assert_eq!("The second half of another really productive day!", context.get("description").unwrap());
         assert_eq!("\"Evolutionary computation in Rust\"", context.get("subject").unwrap());
-        assert_eq!(&first_video.id, context.get("code").unwrap());
+        assert_eq!(&("\"".to_owned() + &first_video.id + "\""), context.get("code").unwrap());
         assert_eq!(&RUST_GA_PLAYLIST, context.get("playlist_code").unwrap());
         assert_eq!(&first_video.snippet.description, context.get("body").unwrap());
     }
