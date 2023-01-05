@@ -32,11 +32,19 @@ pub struct Thumbnails {
 
 #[derive(Debug, Serialize, Deserialize)]
 #[serde(rename_all = "snake_case")]
+pub struct ResourceId {
+    kind: String,
+    videoId: String,
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+#[serde(rename_all = "snake_case")]
 pub struct Snippet {
     publishedAt: DateTime<Local>,
     title: String,
     description: String,
     thumbnails: Thumbnails,
+    resourceId: ResourceId,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -70,6 +78,10 @@ fn clean_text(value: &Value, _: &HashMap<String, Value>) -> Result<Value> {
     Ok(val)
 }
 
+fn add_quotes(s: &str) -> String {
+    "\"".to_owned() + s + "\""
+}
+
 lazy_static! {
     pub static ref TEMPLATES: Tera = {
         let mut tera = match Tera::new("templates/**/*.md") {
@@ -80,7 +92,7 @@ lazy_static! {
             }
         };
         // tera.autoescape_on(vec![".html", ".sql"]);
-        tera.register_filter("restore_angle_brackets", clean_text);
+        tera.register_filter("clean_text", clean_text);
         tera
     };
 }
@@ -103,14 +115,6 @@ const ICE_REPOS_PLAYLIST: &str = "\"PLI9i5fpXEEc40_5gjSO--whmr_5Yp-aJN\"";
 const ECHO_PLAYLIST: &str = "\"PLI9i5fpXEEc6GHl9wyZUWm9UwtO-1Qj7d\"";
 const SEGMENTED_CLIENT_PLAYLIST: &str = "\"PLI9i5fpXEEc6_o2Xy0ozg_hrO4FgswkGG\"";
 const RUST_GA_PLAYLIST: &str = "\"PLI9i5fpXEEc7E8W7wkWYuzXgvPAv8Emkl\"";
-
-static SUBJECT_MAP: phf::Map<&'static str, &'static str> = phf_map! {
-    "rustlings" => "\"Rustlings\"",
-    "ice-repos" => "\"ice-repos\"",
-    "echo" => "\"Echo client-server\"",
-    "segmented" => "\"Segmented file system client\"",
-    "rust-ga" => "\"Evolutionary computation in Rust\""
-};
 
 static SUBJECT_KEYWORD_MAP: phf::Map<&'static str, [&str; 3]> = phf_map! {
     "rustlings" => ["Rustlings", "exercises", "problem"],
@@ -179,8 +183,8 @@ impl Video {
         context.insert("description", self.short_description());
         // `subject` better be a key in the `SUBJECT_MAP` or we have a problem
         #[allow(clippy::unwrap_used)]
-        context.insert("subject", SUBJECT_MAP.get(subject).unwrap());
-        context.insert("code", &("\"".to_owned() + &self.id + "\""));
+        context.insert("subject", &add_quotes(subject));
+        context.insert("code", &add_quotes(&self.snippet.resourceId.videoId));
         // `subject` better be a key in the `PLAYLIST_MAP` or we have a problem
         #[allow(clippy::unwrap_used)]
         context.insert("playlist_code", PLAYLIST_MAP.get(subject).unwrap());
@@ -211,11 +215,11 @@ mod context_tests {
         let videos: Vec<Video> = get_videos("data/eps_page_1.json").unwrap();
         let first_video = &videos[0];
         let context = first_video.make_context();
-        assert_eq!(&("\"".to_owned() + &first_video.snippet.title + "\""), context.get("title").unwrap());
+        assert_eq!(&add_quotes(&first_video.snippet.title), context.get("title").unwrap());
         assert_eq!("2022-12-10", context.get("date").unwrap());
         assert_eq!("The second half of another really productive day!", context.get("description").unwrap());
-        assert_eq!("\"Evolutionary computation in Rust\"", context.get("subject").unwrap());
-        assert_eq!(&("\"".to_owned() + &first_video.id + "\""), context.get("code").unwrap());
+        assert_eq!(&add_quotes("rust-ga"), context.get("subject").unwrap());
+        assert_eq!(&add_quotes(&first_video.snippet.resourceId.videoId), context.get("code").unwrap());
         assert_eq!(&RUST_GA_PLAYLIST, context.get("playlist_code").unwrap());
         assert_eq!(&first_video.snippet.description, context.get("body").unwrap());
     }
