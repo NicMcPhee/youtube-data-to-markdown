@@ -22,7 +22,6 @@ pub struct Thumbnail {
 }
 
 #[derive(Debug, Serialize, Deserialize)]
-#[serde(rename_all = "snake_case")]
 pub struct Thumbnails {
     default: Thumbnail,
     medium: Thumbnail,
@@ -32,20 +31,20 @@ pub struct Thumbnails {
 }
 
 #[derive(Debug, Serialize, Deserialize)]
-#[serde(rename_all = "snake_case")]
+#[serde(rename_all = "camelCase")]
 pub struct ResourceId {
     kind: String,
-    videoId: String,
+    video_id: String,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
-#[serde(rename_all = "snake_case")]
+#[serde(rename_all = "camelCase")]
 pub struct Snippet {
-    publishedAt: DateTime<Local>,
+    published_at: DateTime<Local>,
     title: String,
     description: String,
     thumbnails: Thumbnails,
-    resourceId: ResourceId,
+    resource_id: ResourceId,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -142,7 +141,7 @@ impl Video {
     }
 
     fn publication_date(&self) -> String {
-        let date_string = self.snippet.publishedAt;
+        let date_string = self.snippet.published_at;
         date_string.format("%Y-%m-%d").to_string()
     }
 
@@ -201,7 +200,7 @@ impl Video {
         // `subject` better be a key in the `SUBJECT_MAP` or we have a problem
         #[allow(clippy::unwrap_used)]
         context.insert("subject", &add_quotes(subject));
-        context.insert("code", &add_quotes(&self.snippet.resourceId.videoId));
+        context.insert("code", &add_quotes(&self.snippet.resource_id.video_id));
         // `subject` better be a key in the `PLAYLIST_MAP` or we have a problem
         #[allow(clippy::unwrap_used)]
         context.insert("playlist_code", PLAYLIST_MAP.get(subject).unwrap());
@@ -237,7 +236,7 @@ mod context_tests {
         assert_eq!("2022-12-10", context.get("date").unwrap());
         assert_eq!("The second half of another really productive day!", context.get("description").unwrap());
         assert_eq!(&add_quotes("rust-ga"), context.get("subject").unwrap());
-        assert_eq!(&add_quotes(&first_video.snippet.resourceId.videoId), context.get("code").unwrap());
+        assert_eq!(&add_quotes(&first_video.snippet.resource_id.video_id), context.get("code").unwrap());
         assert_eq!(&RUST_GA_PLAYLIST, context.get("playlist_code").unwrap());
         assert_eq!(&first_video.snippet.description, context.get("body").unwrap());
         assert_eq!("episode_61.md", context.get("filename").unwrap());
