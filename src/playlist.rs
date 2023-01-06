@@ -5,6 +5,7 @@ use phf::phf_map;
 use serde::{Deserialize, Serialize};
 use tera::{Tera, Context, Result, Value};
 use lazy_static::lazy_static;
+use regex::Regex;
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Entry {
@@ -175,10 +176,26 @@ impl Video {
         &self.snippet.description
     }
 
+    fn filename(title: &str) -> String {
+        lazy_static! {
+            static ref EPISODE_REGEX: Regex = 
+                // If this regex doesn't build, then we want everything to die.
+                #[allow(clippy::unwrap_used)]
+                Regex::new(r"[Ee]pisode (?P<ep_num>\d+)").unwrap();
+        }
+        // If we don't have "Episode XXX" in the title, I want to die so we know there's a problem.
+        #[allow(clippy::unwrap_used)]
+        let caps = EPISODE_REGEX.captures(title).unwrap();
+        #[allow(clippy::unwrap_used)]
+        let episode_number = caps.name("ep_num").unwrap().as_str();
+        "episode_".to_owned() + episode_number + ".md"
+    }
+
     fn make_context(&self) -> Context {
         let subject = self.video_subject();
+        let title: &str = &self.title();
         let mut context = Context::new();
-        context.insert("title", &self.title());
+        context.insert("title", title);
         context.insert("date", &self.publication_date());
         context.insert("description", self.short_description());
         // `subject` better be a key in the `SUBJECT_MAP` or we have a problem
@@ -189,6 +206,7 @@ impl Video {
         #[allow(clippy::unwrap_used)]
         context.insert("playlist_code", PLAYLIST_MAP.get(subject).unwrap());
         context.insert("body", self.description());
+        context.insert("filename", &Self::filename(title));
         context
     }
 
@@ -222,5 +240,6 @@ mod context_tests {
         assert_eq!(&add_quotes(&first_video.snippet.resourceId.videoId), context.get("code").unwrap());
         assert_eq!(&RUST_GA_PLAYLIST, context.get("playlist_code").unwrap());
         assert_eq!(&first_video.snippet.description, context.get("body").unwrap());
+        assert_eq!("episode_61.md", context.get("filename").unwrap());
     }
 }
