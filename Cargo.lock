@@ -932,6 +932,7 @@ dependencies = [
  "chrono",
  "lazy_static",
  "phf",
+ "regex",
  "serde",
  "serde_json",
  "tera",
