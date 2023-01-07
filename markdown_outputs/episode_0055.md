@@ -1,7 +1,7 @@
 +++
 title = "Converting `Population` from a Rust type to a trait! Episode 55 of Unhindered by Coding"
 date = 2022-11-30
-description = "Turning `Population` into a trait was the primary focus of tonight's stream. I think we're _nearly_ there, but there are still some compilation errors in `generation.rs` and `lib.rs` that need to be addressed, and I'm guessing that they may push a few more changes back into some of the currently "working" modules. It was an exciting first stream after two weeks away!"
+description = "Turning `Population` into a trait was the primary focus of tonight's stream. I think we're _nearly_ there, but there are still some compilation errors in `generation.rs` and `lib.rs` that need to be addressed, and I'm guessing that they may push a few more changes back into some of the currently 'working' modules. It was an exciting first stream after two weeks away!"
 
 [extra]
 subject = "rust-ga"

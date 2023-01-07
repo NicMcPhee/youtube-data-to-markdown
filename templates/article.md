@@ -1,7 +1,7 @@
 +++
 title = {{ title }}
 date = {{ date }}
-description = "{{ description | clean_text }}"
+description = "{{ description | clean_text | replace(from='"', to="'") }}"
 
 [extra]
 subject = {{ subject }}

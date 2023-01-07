@@ -1,7 +1,7 @@
 +++
 title = "Making scores and errors more generic! Episode 52 of Unhindered by Coding"
 date = 2022-11-12
-description = "What a great session! I felt like we made a lot of excellent progress and are really using traits in a very "Rusty" way that I like. I feel like I can _read_ all the code, but I'm not sure how much of that I could _write_ yet without help. But that's what learning is all about, right? esitsu@Twitch and Wgaffa@Twitch were, as always, the real heros of the stream, providing great ideas and patiently getting me unstuck."
+description = "What a great session! I felt like we made a lot of excellent progress and are really using traits in a very 'Rusty' way that I like. I feel like I can _read_ all the code, but I'm not sure how much of that I could _write_ yet without help. But that's what learning is all about, right? esitsu@Twitch and Wgaffa@Twitch were, as always, the real heros of the stream, providing great ideas and patiently getting me unstuck."
 
 [extra]
 subject = "rustlings"
