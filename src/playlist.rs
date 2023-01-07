@@ -118,10 +118,10 @@ const SEGMENTED_CLIENT_PLAYLIST: &str = "\"PLI9i5fpXEEc6_o2Xy0ozg_hrO4FgswkGG\""
 const RUST_GA_PLAYLIST: &str = "\"PLI9i5fpXEEc7E8W7wkWYuzXgvPAv8Emkl\"";
 
 static SUBJECT_KEYWORD_MAP: phf::Map<&'static str, [&str; 3]> = phf_map! {
-    "rustlings" => ["Rustlings", "exercises", "problem"],
-    "ice-repos" => ["ice-repos", "Yew", "WASM"],
-    "echo" => ["echo", "server", "client"],
-    "segmented" => ["segmented", "client", "file"],
+    "rustlings" => ["Rustlings", "exercises", "learn"],
+    "ice-repos" => ["ice-repos", "archiv", "repositor"],
+    "echo" => ["echo", "server", "thread"],
+    "segmented" => ["segmented", "lab", "packet"],
     "rust-ga" => ["rust-ga", "population", "bitstring"],
 };
 
