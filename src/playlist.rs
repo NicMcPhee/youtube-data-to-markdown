@@ -1,4 +1,5 @@
-use std::collections::HashMap;
+use core::fmt;
+use std::{collections::HashMap, fs::File, io::Write, fmt::format};
 
 use chrono::{DateTime, Local};
 use phf::phf_map;
@@ -133,7 +134,7 @@ static PLAYLIST_MAP: phf::Map<&'static str, &'static str> = phf_map! {
 };
 
 impl Video {
-    fn title(&self) -> String {
+    pub fn title(&self) -> String {
         let mut result = "\"".to_string();
         result.push_str(&self.snippet.title);
         result.push('"');
@@ -175,7 +176,7 @@ impl Video {
         &self.snippet.description
     }
 
-    fn filename(title: &str) -> String {
+    pub fn filename(title: &str) -> String {
         lazy_static! {
             static ref EPISODE_REGEX: Regex = 
                 // If this regex doesn't build, then we want everything to die.
@@ -187,7 +188,8 @@ impl Video {
         let caps = EPISODE_REGEX.captures(title).unwrap();
         #[allow(clippy::unwrap_used)]
         let episode_number = caps.name("ep_num").unwrap().as_str();
-        "episode_".to_owned() + episode_number + ".md"
+        let result = format!("episode_{:0>4}.md", episode_number);
+        result
     }
 
     fn make_context(&self) -> Context {
@@ -218,6 +220,16 @@ impl Video {
         // There better be an `article.md` template
         #[allow(clippy::unwrap_used)]
         TEMPLATES.render("article.md", &context).unwrap()
+    }
+
+    pub fn write_markdown_file(&self) {
+        let markdown = self.to_markdown();
+        let filename
+            = "markdown_outputs/".to_owned() + &Video::filename(&self.title());
+        let mut file = File::create(filename).unwrap();
+        // If there's a problem writing the file I want to crash
+        #[allow(clippy::unwrap_used)]
+        file.write_all(markdown.as_bytes()).unwrap();
     }
 }
 
